@@ -9,18 +9,16 @@ import prodb, {
 let db = prodb("Productdb", {
   products: `++id, name, seller, price`, 
   articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, ubicacion, fecha, estado`, 
-  usuario: `++id, email, nombre, telefono, password`
+  usuario: `email, nombre, telefono, password`
 });
 
 
 
 // input tags
 const userid = document.getElementById("userid");
-const username = document.getElementById("username");
-const userphone = document.getElementById("userphone");
-const useremail = document.getElementById("useremail");
-const userpassword = document.getElementById("userpassword");
-
+const proname = document.getElementById("proname");
+const seller = document.getElementById("seller");
+const price = document.getElementById("price");
 
 // create button
 const btncreate = document.getElementById("btn-create");
@@ -37,11 +35,10 @@ table();
 // event listerner for create button
 btncreate.onclick = event => {
   // insert values
-  let flag = bulkcreate(db.usuario, {
-    name: username.value,
-    phone: userphone.value,
-    email: useremail.value,
-    password: userpassword.value
+  let flag = bulkcreate(db.products, {
+    name: proname.value,
+    seller: seller.value,
+    price: price.value
   });
   // reset textbox values
   //proname.value = "";
@@ -58,8 +55,6 @@ btncreate.onclick = event => {
   let insertmsg = document.querySelector(".insertmsg");
   getMsg(flag, insertmsg);
 };
-
-
 
 // event listerner for create button
 btnread.onclick = table;
