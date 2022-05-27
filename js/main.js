@@ -117,7 +117,7 @@ function table() {
         for (const value in data) {
           createEle("td", tr, (td) => {
             td.textContent =
-              data.password === data[value] ? `${data[value]}` : data[value];
+              data.phone === data[value] ? `+505 ${data[value]}` : data[value];
           });
         }
         createEle("td", tr, (td) => {

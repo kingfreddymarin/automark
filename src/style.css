@@ -10,9 +10,11 @@ body {
     margin: 1.5em .6em;
     padding: .3em 2.4em;
 }
-
+.table-data{
+    overflow-x: scroll;
+}
 .d-flex table {
-    margin: 1em 10em;
+    margin: 1em ;
 }
 
 table .btnedit {
