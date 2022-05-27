@@ -70,9 +70,8 @@ const SortObj = (sortobj) => {
   obj = {
     id: sortobj.id,
     name: sortobj.name,
-    phone: sortobj.phone,
-    email: sortobj.email,
-    password: sortobj.password
+    seller: sortobj.seller,
+    price: sortobj.price
   };
   return obj;
 }
