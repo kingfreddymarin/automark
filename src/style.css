@@ -1,7 +1,11 @@
 body {
     box-sizing: border-box;
+    display:flex;
+    flex-direction: row;
 }
-
+.header{
+    
+}
 .d-flex input {
     margin: .9em 0em;
 }
