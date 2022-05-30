@@ -2,7 +2,9 @@ import prodb, {
   bulkcreate,
   createEle,
   getData,
-  SortObj
+  SortObj,
+  getDataUser,
+  SortObjUser
 } from "./admPublicacionesModule.js";
 
 
@@ -57,7 +59,7 @@ btncreate.onclick = event => {
   itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = "";
 
   // set id textbox value
-  getData(db.products, data => {
+  getData(db.articulos, data => {
     itemid.value = data.id + 1 || 1;
   });
   
@@ -115,12 +117,28 @@ btndelete.onclick = () => {
 }
 
 window.onload = event => {
+  //load dropdown list
+  listUsers();
   // set id textbox value
   textID(itemid);
 };
 
 
-
+//dropdown users population 
+function listUsers(){
+  const userList = document.getElementById("itemuser");
+  getDataUser(db.usuario, (data, index) => {
+    if(data){
+      console.log(data);
+      createEle("option", userList, option => {
+        console.log(option);
+        option.textContent = option.value = data.name;
+      })
+    }else{
+      console.log("No users in the database")
+    };
+  });
+};
 
 // create dynamic table
 function table() {
@@ -139,6 +157,7 @@ function table() {
         for (const value in data) {
           createEle("td", tr, td => {
             td.textContent = data.price === data[value] ? `$ ${data[value]}` : data[value];
+            console.log()
           });
         }
         createEle("td", tr, td => {

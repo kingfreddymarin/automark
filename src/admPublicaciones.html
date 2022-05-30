@@ -19,14 +19,20 @@
   <main>
     <div class="insert-box">
       <div class="container text-center">
-        <h1 class="bg-light py-4 text-info">
+        <h1 class="py-4 text-info">
           <i class="fa-solid fa-car-burst"></i> Automark's crear publicacion
         </h1>
         <div class="d-flex justify-content-center">
           <form class="w-50">
             <input type="text" id="itemid" class="form-control" autocomplete="off" readonly placeholder="ID" />
             <input type="text" id="itemtitle" class="form-control" autocomplete="off" placeholder="Titulo del articulo" />
-            <input type="text" id="itemtype" class="form-control" autocomplete="off" placeholder="Tipo de articulo" />
+            <!--<input type="text" id="itemtype" class="form-control" autocomplete="off" placeholder="Tipo de articulo" />-->
+            <select name="itemType" id="itemtype" class="form-control">
+              <option value="">-- select --</option>
+              <option value="Repuesto genuino">Repuesto genuino</option>
+              <option value="Repuesto original">Repuesto original</option>
+              <option value="Repuesto alternativo">Repuesto alternativo</option>
+            </select>
             <input type="text" id="itemdescription" class="form-control" autocomplete="off" placeholder="Descripcion" />
             
             <div class="row">
@@ -37,12 +43,40 @@
                 <input type="number" id="itemprice" class="form-control m-0" autocomplete="off" placeholder="Precio" />
               </div>
             </div>
+            <!--<input type="text" id="itemlocation" class="form-control" autocomplete="off" placeholder="ubicacion" />-->
+            <select name="itemLocation" id="itemlocation" class="form-control top-margin">
+              <option value="">-- ubicacion --</option>
+              <option value="Atlantico Norte">Atlantico Norte</option>
+              <option value="Atlantico Sur">Atlantico Sur</option>
+              <option value="Boaco">Boaco</option>
+              <option value="Carazo">Carazo</option>
+              <option value="Chinandega">Chinandega</option>
+              <option value="Chontales">Chontales</option>
+              <option value="Esteli">Esteli</option>
+              <option value="Granada">Granada</option>
+              <option value="Jinotega">Jinotega</option>
+              <option value="Leon">Leon</option>
+              <option value="Madriz">Madriz</option>
+              <option value="Managua">Managua</option>
+              <option value="Masaya">Masaya</option>
+              <option value="Matagalpa">Matagalpa</option>
+              <option value="Nueva Segovia">Nueva Segovia</option>
+              <option value="Rio San Juan">Rio San Juan</option>
+              <option value="Rivas">Rivas</option>
+            </select>
+            <!--<input type="text" id="itemstate" class="form-control" autocomplete="off" placeholder="Estado" />
+-->
+            <select name="itemState" id="itemstate " class="form-control top-margin">
+              <option value="">-- select --</option>
+              <option value="Disponible">Disponible</option>
+              <option value="Vendido">Vendido</option>
+            </select>
+            <!--<input type="text" id="itemuser" class="form-control" autocomplete="off" placeholder="Usuario" />
+-->
+            <select name="itemUser" id="itemuser" class="form-control top-margin">
+              <option value="">-- select --</option>
+            </select>
             
-            <input type="text" id="itemlocation" class="form-control" autocomplete="off" placeholder="ubicacion" />
-            <input type="text" id="itemstate" class="form-control" autocomplete="off" placeholder="Estado" />
-            <input type="text" id="itemuser" class="form-control" autocomplete="off" placeholder="Usuario" />
-  
-  
             
           </form>
         </div>

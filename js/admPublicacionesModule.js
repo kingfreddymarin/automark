@@ -79,11 +79,43 @@ const SortObj = (sortobj) => {
   return obj;
 }
 
+// getData from the database
+const getDataUser = (dbname, fn) => {
+  let index = 0;
+  let obj = {};
+  dbname.count(count => {
+    // count rows in the table using count method
+    if (count) {
+      dbname.each(table => {
+        // table => return the table object data
+        // to arrange order we are going to create for in loop
+        obj = SortObjUser(table);
+        fn(obj, index++); // call function with data argument
+      });
+    } else {
+      fn(0);
+    }
+  });
+};
+
+const SortObjUser = (sortobj) => {
+  let obj = {};
+  obj = {
+    id: sortobj.id,
+    name: sortobj.name,
+    email: sortobj.email,
+    password: sortobj.password
+  };
+  return obj;
+}
+
 
 export default productsdb;
 export {
   bulkcreate,
   createEle,
   getData,
-  SortObj
+  SortObj,
+  getDataUser,
+  SortObjUser
 };

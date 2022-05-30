@@ -43,6 +43,7 @@ btncreate.onclick = (event) => {
   getData(db.usuario, (data) => {
     userid.value = data.id + 1 || 1;
   });
+  
   table();
 
   let insertmsg = document.querySelector(".insertmsg");

@@ -1,10 +1,22 @@
 body {
     box-sizing: border-box;
-    display:flex;
-    flex-direction: row;
+    justify-content: center;
 }
-.header{
-    
+.row{
+    justify-content: center; 
+}
+.container{
+    justify-content: center;
+}
+.top-margin{
+    margin-top: 1rem;
+}
+.products-available{
+    background-color: rgb(206, 255, 239);
+    height: auto;
+    width: 90%;
+    padding: 2rem;
+    border-radius: 3rem;
 }
 .d-flex input {
     margin: .9em 0em;
