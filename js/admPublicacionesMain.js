@@ -95,11 +95,11 @@ btnupdate.onclick = () => {
 
       itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = "";
       //console.log(get);
+      table();
     })
   } else {
     console.log(`Please Select id: ${id}`);
   }
-  table();
 }
 
 // delete button
