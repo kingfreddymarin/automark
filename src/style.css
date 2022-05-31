@@ -8,8 +8,8 @@ body {
     gap: 1rem;
 }
 .element-div{
-    height: auto;
-    width: 90;
+    height: 50vh;
+    width: 90%;
     background-color: rgb(240, 255, 254);
 }
 .row{
