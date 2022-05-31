@@ -74,7 +74,8 @@ const SortObj = (sortobj) => {
     price: sortobj.price,
     location: sortobj.location,
     state: sortobj.state,
-    user: sortobj.user
+    user: sortobj.user,
+    img: sortobj.img
   };
   return obj;
 }

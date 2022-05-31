@@ -9,7 +9,7 @@ import prodb, {
 
 
 let db = prodb("Productdb", {
-  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, fecha, estado`, 
+  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, img, estado`, 
   usuario: `++id, email, nombre, telefono, password`
 });
 
@@ -25,6 +25,7 @@ const itemprice = document.getElementById("itemprice");
 const itemlocation = document.getElementById("itemlocation");
 const itemstate = document.getElementById("itemstate");
 const itemuser = document.getElementById("itemuser");
+const itemimg = document.getElementById("image-input");
 
 
 // create button
@@ -50,13 +51,14 @@ btncreate.onclick = event => {
     price: itemprice.value,
     location: itemlocation.value,
     state: itemstate.value,
-    user: itemuser.value
+    user: itemuser.value,
+    img: itemimg.value
   });
   // reset textbox values
   //proname.value = "";
   //seller.value = "";
   // price.value = "";
-  itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = "";
+  itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = itemimg.value = "";
 
   // set id textbox value
   getData(db.articulos, data => {
@@ -67,6 +69,18 @@ btncreate.onclick = event => {
   getMsg(flag, insertmsg);
   table();
 };
+//inserting an image
+const image_input = document.querySelector("#image-input");
+var uploaded_image = "";
+
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    uploaded_image = reader.result;
+    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0].name);
+});
 
 // event listerner for create button
 btnread.onclick = table;
@@ -84,7 +98,8 @@ btnupdate.onclick = () => {
       price: itemprice.value,
       location: itemlocation.value,
       state: itemstate.value,
-      user: itemuser.value
+      user: itemuser.value,
+      img: itemimg.value
     }).then((updated) => {
       // let get = updated ? `data updated` : `couldn't update data`;
       let get = updated ? true : false;
@@ -93,7 +108,7 @@ btnupdate.onclick = () => {
       let updatemsg = document.querySelector(".updatemsg");
       getMsg(get, updatemsg);
 
-      itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = "";
+      itemtitle.value = itemtype.value = itemdescription.value = itemqty.value = itemprice.value = itemlocation.value = itemstate.value = itemuser.value = itemimg.value ="";
       //console.log(get);
       table();
     })
@@ -106,7 +121,7 @@ btnupdate.onclick = () => {
 btndelete.onclick = () => {
   db.delete();
   db = prodb("Productdb", {
-    articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, fecha, estado`, 
+    articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, img, estado`, 
   });
   db.open();
   table();

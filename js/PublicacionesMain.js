@@ -7,7 +7,7 @@ import prodb, {
 
 
 let db = prodb("Productdb", {
-  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, fecha, estado`, 
+  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, img, estado`, 
   usuario: `++id, email, nombre, telefono, password`
 });
 
@@ -23,6 +23,7 @@ const itemprice = document.getElementById("itemprice");
 const itemlocation = document.getElementById("itemlocation");
 const itemstate = document.getElementById("itemstate");
 const itemuser = document.getElementById("itemuser");
+const itemimg = document.getElementById("image-input");
 
 
 // create button

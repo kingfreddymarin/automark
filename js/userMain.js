@@ -1,7 +1,7 @@
 import prodb, { bulkcreate, createEle, getData, SortObj } from "./userModule.js";
 
 let db = prodb("Productdb", {
-  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, fecha, estado`,
+  articulos: `++id, tipo, nombre, usuario, descripcion, cantidad, precio, ubicacion, img, estado`,
   usuario: `++id, email, nombre, telefono, password`
 });
 
@@ -117,7 +117,7 @@ function table() {
         for (const value in data) {
           createEle("td", tr, (td) => {
             td.textContent =
-              data.phone === data[value] ? `+505 ${data[value]}` : data[value];
+              data.phone === data[value] ? `+505${data[value]}` : data[value];
           });
         }
         createEle("td", tr, (td) => {
