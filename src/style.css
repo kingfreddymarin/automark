@@ -2,6 +2,16 @@ body {
     box-sizing: border-box;
     justify-content: center;
 }
+#products-available{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.element-div{
+    height: auto;
+    width: 90;
+    background-color: rgb(240, 255, 254);
+}
 .row{
     justify-content: center; 
 }

@@ -59,13 +59,29 @@ function table() {
             h1.className += "element-title"
             h1.textContent = data.title;
           });
-          createEle("h3", div, h3 =>{
-            h3.className += "element-qty"
-            h3.textContent = data.qty;
+          createEle("p", div, p =>{
+            p.className += "element-type"
+            p.textContent =`${data.type} ` 
           });
           createEle("p", div, p =>{
             p.className += "element-price"
             p.textContent =`$${data.price} ` 
+          });
+          createEle("p", div, p =>{
+            p.className += "element-description"
+            p.textContent =`${data.description} ` 
+          });
+          createEle("h4", div, h4 =>{
+            h4.className += "element-location"
+            h4.textContent =`${data.location} ` 
+          });
+          createEle("h3", div, h3 =>{
+            h3.className += "element-state"
+            h3.textContent =`${data.state} ` 
+          });
+          createEle("p", div, p =>{
+            p.className += "element-user"
+            p.textContent =`${data.user} ` 
           });
         });
       
