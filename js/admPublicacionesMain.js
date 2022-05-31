@@ -52,7 +52,7 @@ btncreate.onclick = event => {
     location: itemlocation.value,
     state: itemstate.value,
     user: itemuser.value,
-    img: itemimg.value
+    img: itemimg.value.split("fakepath\\")[1]
   });
   // reset textbox values
   //proname.value = "";
@@ -69,6 +69,7 @@ btncreate.onclick = event => {
   getMsg(flag, insertmsg);
   table();
 };
+
 //inserting an image
 const image_input = document.querySelector("#image-input");
 var uploaded_image = "";
@@ -77,9 +78,8 @@ image_input.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     uploaded_image = reader.result;
-    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
   });
-  reader.readAsDataURL(this.files[0].name);
+  reader.readAsDataURL(this.files[0]);
 });
 
 // event listerner for create button
@@ -99,7 +99,7 @@ btnupdate.onclick = () => {
       location: itemlocation.value,
       state: itemstate.value,
       user: itemuser.value,
-      img: itemimg.value
+      img: itemimg.value.split("fakepath\\")[1]
     }).then((updated) => {
       // let get = updated ? `data updated` : `couldn't update data`;
       let get = updated ? true : false;

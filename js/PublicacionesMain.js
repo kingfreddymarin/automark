@@ -53,9 +53,11 @@ function table() {
 
   getData(db.articulos, (data, index) => {
     if (data) {
-        createEle("div",items, div =>{
+      createEle("div", items, div0 =>{
+        div0.className += "element-main"
+        createEle("div",div0, div =>{
           console.log(div);
-          div.className += "element-div";
+          div.className += "element-info";
           createEle("h1", div, h1 =>{
             h1.className += "element-title"
             h1.textContent = data.title;
@@ -84,7 +86,26 @@ function table() {
             p.className += "element-user"
             p.textContent =`${data.user} ` 
           });
+          createEle("div", div, div1 =>{
+            div1.className += "element-space"
+            createEle("a", div1, a =>{
+              a.className += "whatsapp"
+              a.href = `whatsapp://send/?phone=77234855&text=Me+interesa+este+producto: ${String(data.title)}!+Porfavor+contactarse+conmigo+a+este+numero`
+              createEle("img", a, img =>{
+                img.src = 'https://cdn-icons-png.flaticon.com/512/226/226757.png'
+              });
+            });
+          })
         });
+        createEle("div", div0, div =>{
+          div.className += "image-div"
+          createEle("img", div, img =>{
+            img.className += "element-image"
+            img.alt =`${data.img}`
+            img.src = `../images/${String(data.img)}`
+          });
+        })
+      })
       
       // createEle("tr", tbody, tr => {
       //   for (const value in data) {
