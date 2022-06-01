@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Automark Usuarios</title>
+  <title>Automark | Manejar usuarios</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
@@ -17,38 +17,42 @@
 
 <body>
   <main>
-    <div class="container text-center">
-      <div class="row">
-        <h1 class="py-4 text-info">
-          <i class="fa-solid fa-car-burst"></i> Automark's | Manejar usuarios
-        </h1>
-      </div>
-      
-      <div class="d-flex justify-content-center">
-        <form class="w-50">
-          <input type="text" id="userid" class="form-control" autocomplete="off" readonly placeholder="ID" />
-          <input type="text" id="username" class="form-control" autocomplete="off" placeholder="Nombre: Jane Doe" />
-          <input type="text" id="userphone" class="form-control" autocomplete="off" placeholder="Telefono: ej. 18005000" />
-          <div class="row">
-            <div class="col">
-              <input type="text" id="useremail" class="form-control m-0" autocomplete="off" placeholder="e-mail" />
+    <div class="container text-center flex-direction">
+      <div>
+        <div class="row">
+          <h1 class="text-info">
+            <i class="fa-solid fa-car-burst"></i> Automark's | Manejar usuarios
+          </h1>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+          <form class="w-50">
+            <input type="text" id="userid" class="form-control" autocomplete="off" readonly placeholder="ID" />
+            <input type="text" id="username" class="form-control" autocomplete="off" placeholder="Nombre: Jane Doe" />
+            <input type="text" id="userphone" class="form-control" autocomplete="off" placeholder="Telefono: ej. 18005000" />
+            <div class="row">
+              <div class="col">
+                <input type="text" id="useremail" class="form-control m-0" autocomplete="off" placeholder="e-mail" />
+              </div>
+              <div class="col">
+                <input type="text" id="userpassword" class="form-control m-0" autocomplete="off" text="hidden" placeholder="Contraseña.." />
+              </div>
             </div>
-            <div class="col">
-              <input type="text" id="userpassword" class="form-control m-0" autocomplete="off" text="hidden" placeholder="Contraseña.." />
-            </div>
-          </div>
-          
-        </form>
-      </div>
-      <div class="col d-flex justify-content-center">
-        <button class="btn btn-success" id="btn-create">Create</button>
-        <button class="btn btn-warning" id="btn-update">Update</button>
-        <button class="btn btn-danger" id="btn-delete">Delete All</button>
-        <button class="btn btn-primary" id="btn-read">Refresh</button>
+            
+          </form>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <button class="btn btn-secondary" id="btn-create">Create</button>
+          <button class="btn btn-light" id="btn-update">Update</button>
+          <button class="btn btn-danger hide" id="btn-delete">Delete All</button>
+          <button class="btn btn-info" id="btn-read">Refresh</button>
+          <a class="btn btn-success" id="btn-pub" href="../src/admPublicaciones.html">Publicaciones</a>
+
+        </div>
       </div>
 
       <!--  Table -->
-      <div class="d-flex table-data">
+      <div class="tables-data">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -88,6 +92,7 @@
   <div class="w-100 btn btn-success insertmsg">Data Inserted Successfully...!</div>
   <div class="w-100 btn btn-warning updatemsg">Data Updated..!</div>
   <div class="w-100 btn btn-danger deletemsg">Data Deleted..!</div>
+  
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

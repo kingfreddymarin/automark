@@ -4,11 +4,19 @@ html{
     justify-content: center;
 }
 body {
+    background-color: white;
+    color: rgb(33, 33, 33);
     width: 100vh;
     height: 100vh;
     margin: 0%;
     justify-content: center;
     align-items: center;
+}
+#btn-pub{
+    height:2.5rem;
+}
+.container-user-data{
+    display: flex;
 }
 .element-title{
     grid-area: one;
@@ -35,15 +43,31 @@ body {
 }
 .justify-content-center{
     justify-content: center;
+    align-items: center;
 }
 .whatsapp{
     grid-area: eight;
+}
+.insert-box{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    gap: 3rem; 
+    padding: 2rem;
+    padding-left: 5rem;
+}
+.tables-data{
+    width: 90vw;
+}
+.table-data{
+    overflow-x: scroll;
+    width: 90vw;
 }
 .element-main{
     display: flex;
     height: auto;
     width: 90vw;
-    background-color: rgba(23, 163, 184, 0.195);
+    background-color: rgba(0, 0, 0, 0.093);
     padding: 1rem;
     border-radius: 1rem;
     align-items: center;
@@ -72,7 +96,7 @@ body {
 .element-info{
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 .element-image{
     width: 100%;
@@ -84,6 +108,15 @@ body {
 .row{
     justify-content: center; 
 }
+.flex-direction{
+    align-items: center;
+    margin-left: 10%;
+    gap: 4rem;
+    display: flex;
+    flex-direction: row;
+    height:100vh;
+    width: 100vw;
+}
 .container{
     padding:1em;
 }
@@ -91,7 +124,11 @@ body {
     margin-top: 1rem;
 }
 .pub{
-    Color:rgb(17, 114, 130);
+    Color:rgb(35, 160, 179);
+    margin-bottom: 1rem;
+}
+.element-state{
+    text-transform: uppercase;
 }
 .element-info{
     display: grid;
@@ -109,12 +146,20 @@ body {
 #products-available{
     position: absolute;
     left: 4.2rem;
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
     width: 90%;
     border-radius: 2rem;
     gap: 1rem;
     margin: 0%;
+}
+.container-adm-publicaciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.table-data{
+    width: 90vw;
 }
 .d-flex input {
     margin: .9em 0em;
@@ -123,9 +168,6 @@ body {
 .d-flex button {
     margin: 1.5em .6em;
     padding: .3em 2.4em;
-}
-.table-data{
-    overflow-x: scroll;
 }
 .d-flex table {
     margin: 1em ;

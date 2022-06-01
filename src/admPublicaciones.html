@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Automark | Create post</title>
+  <title>Automark | Crear Publicacion</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
@@ -16,11 +16,10 @@
 </head>
 
 <body>
-  <main>
     <div class="insert-box">
-      <div class="container text-center">
-        <h1 class="py-4 text-info">
-          <i class="fa-solid fa-car-burst"></i> Automark's crear publicacion
+      <div class="container-adm-publicaciones text-center">
+        <h1 class=" text-info">
+          <i class="fa-solid fa-car-burst"></i> Automark's | Crear Publicacion
         </h1>
         <div class="d-flex justify-content-center">
           <form class="w-50">
@@ -87,8 +86,10 @@
         <div class="d-flex justify-content-center">
           <button class="btn btn-success" id="btn-create">Crear</button>
           <button class="btn btn-warning" id="btn-update">Actualizar</button>
-          <button class="btn btn-danger" id="btn-delete">Borrar todo</button>
+          <button class="btn btn-danger hide" id="btn-delete">Borrar todo</button>
           <button class="btn btn-primary" id="btn-read">Refrescar</button>
+          <a class="btn btn-secondary" id="btn-pub" href="../src/users.html">Usuarios</a>
+
         </div>
     </div>
       <!--  Table -->
@@ -116,7 +117,7 @@
       </div>
       <div id="notfound"></div>
     </div>
-  </main>
+  
 
   <!-- Labels -->
   <div class="w-100 btn btn-success insertmsg">Data Inserted Successfully...!</div>
